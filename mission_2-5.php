@@ -1,28 +1,28 @@
 <?php
 
-$filename="mission_2-5_yuzukitakamatsu.txt";				//ƒtƒ@ƒCƒ‹–¼‚ğw’è
-$fp_a=fopen($filename,"a");						//ƒtƒ@ƒCƒ‹‚ğŠJ‚­
-$name=$_POST["name"];							//–¼‘O
-$comment=$_POST["comment"];						//ƒRƒƒ“ƒg
-$del_number=$_POST["del_number"];					//íœ
-$edit_number=$_POST["edit_number"];					//•ÒW
-$edit=$_POST["edit"];							//•ÒW
-$pswd=$_POST["pswd"];							//ƒpƒXƒ[ƒh
-$del_pswd=$_POST["del_pswd"];						//íœƒpƒXƒ[ƒh
-$edit_pswd=$_POST["edit_pswd"];						//•ÒWƒpƒXƒ[ƒh
-$ret_array=file($filename);						//ƒtƒ@ƒCƒ‹‚ğ”z—ñ‚É“ü‚ê‚é
-$count=count($ret_array)+1;						//ƒtƒ@ƒCƒ‹‚Ìƒf[ƒ^‚ğ”‚¦‚é
-$date=date("Y/m/d H:i:s");						//“ú•t
-$DATA=$count."<>".$name."<>".$comment."<>".$date."<>".$pswd;		//“Še”Ô†A–¼‘OAƒRƒƒ“ƒgA“ú•t
+$filename="mission_2-5_yuzukitakamatsu.txt";				//ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŒ‡å®š
+$fp_a=fopen($filename,"a");						//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
+$name=$_POST["name"];							//åå‰
+$comment=$_POST["comment"];						//ã‚³ãƒ¡ãƒ³ãƒˆ
+$del_number=$_POST["del_number"];					//å‰Šé™¤
+$edit_number=$_POST["edit_number"];					//ç·¨é›†
+$edit=$_POST["edit"];							//ç·¨é›†
+$pswd=$_POST["pswd"];							//ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+$del_pswd=$_POST["del_pswd"];						//å‰Šé™¤ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+$edit_pswd=$_POST["edit_pswd"];						//ç·¨é›†ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+$ret_array=file($filename);						//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é…åˆ—ã«å…¥ã‚Œã‚‹
+$count=count($ret_array)+1;						//ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ•°ãˆã‚‹
+$date=date("Y/m/d H:i:s");						//æ—¥ä»˜
+$DATA=$count."<>".$name."<>".$comment."<>".$date."<>".$pswd;		//æŠ•ç¨¿ç•ªå·ã€åå‰ã€ã‚³ãƒ¡ãƒ³ãƒˆã€æ—¥ä»˜
 
-	if(!empty($edit_number)){					//•ÒW”Ô†‚É‘‚«‚İ‚ª‚ ‚éê‡
-		$ret_array=file($filename);				//ƒtƒ@ƒCƒ‹‚ğ”z—ñ‚É“ü‚ê‚é
+	if(!empty($edit_number)){					//ç·¨é›†ç•ªå·ã«æ›¸ãè¾¼ã¿ãŒã‚ã‚‹å ´åˆ
+		$ret_array=file($filename);				//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é…åˆ—ã«å…¥ã‚Œã‚‹
 		foreach($ret_array as $data){				
-		$data1=explode("<>",$data);				//“Še”Ô†‚ğæ‚èo‚·
-	if($data1[0]==$edit_number && $data1[4]==$edit_pswd){		//“Še”Ô†•ÒW”Ô†@ƒpƒXƒ[ƒh‚ªˆê’v‚·‚é‚Æ‚«
-		$new_num=$data1[0];					//”Ô†‘ã“ü
-		$new_name=$data1[1];					//–¼‘O‚ğ‘ã“ü
-		$new_comment=$data1[2];					//ƒRƒƒ“ƒg‚ğ‘ã“ü
+		$data1=explode("<>",$data);				//æŠ•ç¨¿ç•ªå·ã‚’å–ã‚Šå‡ºã™
+	if($data1[0]==$edit_number && $data1[4]==$edit_pswd){		//æŠ•ç¨¿ç•ªå·ï¼ç·¨é›†ç•ªå·ã€€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒä¸€è‡´ã™ã‚‹ã¨ã
+		$new_num=$data1[0];					//ç•ªå·ä»£å…¥
+		$new_name=$data1[1];					//åå‰ã‚’ä»£å…¥
+		$new_comment=$data1[2];					//ã‚³ãƒ¡ãƒ³ãƒˆã‚’ä»£å…¥
 	}
 	}
 	}
@@ -38,60 +38,59 @@ $DATA=$count."<>".$name."<>".$comment."<>".$date."<>".$pswd;		//“Še”Ô†A–¼‘OA
 </head>
 <body>
 <form action="mission_2-5.php "method="post">
-	–¼‘O</br>
-	<input type="text" name="name" placeholder="–¼‘O" value="<?php echo $new_name; ?>"><br/>
-	ƒRƒƒ“ƒg<br/>
-	<input type="text" name="comment" placeholder="ƒRƒƒ“ƒg" value="<?php echo $new_comment; ?>"><br/>
+	åå‰</br>
+	<input type="text" name="name" placeholder="åå‰" value="<?php echo $new_name; ?>"><br/>
+	ã‚³ãƒ¡ãƒ³ãƒˆ<br/>
+	<input type="text" name="comment" placeholder="ã‚³ãƒ¡ãƒ³ãƒˆ" value="<?php echo $new_comment; ?>"><br/>
 	<input type="hidden" name="edit" value="<?php echo $new_num; ?>">
-	<input type="text" name="pswd" placeholder="ƒpƒXƒ[ƒh">
-	<input type="submit" value="‘—M"><br/>
+	<input type="text" name="pswd" placeholder="ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰">
+	<input type="submit" value="é€ä¿¡"><br/>
 
 
-	íœ‘ÎÛ”Ô†<br/>
-	<input type="text" name="del_number" placeholder="íœ‘ÎÛ”Ô†"><br/>
-	<input type="text" name="del_pswd" placeholder="ƒpƒXƒ[ƒh">
-	<input type="submit" value="íœ"><br/>
-	•ÒW‘ÎÛ”Ô†<br/>
-	<input type="text" name="edit_number" placeholder="•ÒW‘ÎÛ”Ô†"><br/>
-	<input type="text" name="edit_pswd" placeholder="ƒpƒXƒ[ƒh">
-	<input type="submit" value="•ÒW">
+	å‰Šé™¤å¯¾è±¡ç•ªå·<br/>
+	<input type="text" name="del_number" placeholder="å‰Šé™¤å¯¾è±¡ç•ªå·"><br/>
+	<input type="text" name="del_pswd" placeholder="ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰">
+	<input type="submit" value="å‰Šé™¤"><br/>
+	ç·¨é›†å¯¾è±¡ç•ªå·<br/>
+	<input type="text" name="edit_number" placeholder="ç·¨é›†å¯¾è±¡ç•ªå·"><br/>
+	<input type="text" name="edit_pswd" placeholder="ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰">
+	<input type="submit" value="ç·¨é›†">
 </form>
 
 <?php
-	//•ÒW		
-	if(!empty($name) && !empty($comment) && !empty($pswd) && empty($edit)){//–¼AƒRƒAƒpƒX‘‚«‚İ—LA•ÒW‹ó
+	//ç·¨é›†		
+	if(!empty($name) && !empty($comment) && !empty($pswd) && empty($edit)){//åã€ã‚³ãƒ¡ã€ãƒ‘ã‚¹æ›¸ãè¾¼ã¿æœ‰ã€ç·¨é›†ç©º
 		
-		$ret_array=file($filename);					//ƒtƒ@ƒCƒ‹‚ğ”z—ñ‚É“ü‚ê‚é
-		$fp_a=fopen($filename,"a");					//ƒtƒ@ƒCƒ‹‚ğŠJ‚­
-		$DATA=$count."<>".$name."<>".$comment."<>".$date."<>".$pswd."<>";//“Še”Ô†A–¼‘OAƒRƒƒ“ƒgA“ú•t
+		$ret_array=file($filename);					//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é…åˆ—ã«å…¥ã‚Œã‚‹
+		$fp_a=fopen($filename,"a");					//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
+		$DATA=$count."<>".$name."<>".$comment."<>".$date."<>".$pswd."<>";//æŠ•ç¨¿ç•ªå·ã€åå‰ã€ã‚³ãƒ¡ãƒ³ãƒˆã€æ—¥ä»˜
 		fwrite($fp_a,$DATA."\n");
 		fclose($fp_a);
 		foreach($ret_array as $data){
 		$data1=explode("<>",$data);
-		//echo $data1[0]." ".$data1[1]." ".$data1[2]." ".$data1[3]."<br>";//ƒf[ƒ^‚ğ•\¦‚·‚é
 		}
-		//•ÒW‚É‘‚«‚İ‚ª‚ ‚é‚Æ‚«
+		//ç·¨é›†ã«æ›¸ãè¾¼ã¿ãŒã‚ã‚‹ã¨ã
 		}elseif(!empty($name) && !empty($comment) && !empty($edit)){
-		$ret_array=file($filename,FILE_IGNORE_NEW_LINES);		//”z—ñ‚É“ü‚ê‚é
-		$fp_w=fopen($filename,"w");					//ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		$ret_array=file($filename,FILE_IGNORE_NEW_LINES);		//é…åˆ—ã«å…¥ã‚Œã‚‹
+		$fp_w=fopen($filename,"w");					//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		foreach($ret_array as $data){				
-		$data2=explode("<>",$data);					//ƒf[ƒ^‚ğæ‚èo‚·
-			if($edit==$data2[0] && $pswd==$data2[4]){		//•ÒW”Ô†‚ÆƒpƒXƒ[ƒh‚ªƒCƒR[ƒ‹‚Ì
+		$data2=explode("<>",$data);					//ãƒ‡ãƒ¼ã‚¿ã‚’å–ã‚Šå‡ºã™
+			if($edit==$data2[0] && $pswd==$data2[4]){		//ç·¨é›†ç•ªå·ã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒã‚¤ã‚³ãƒ¼ãƒ«ã®æ™‚
 			$data3=explode("<>",$data);
 			$data3[1]=$name;
 			$data3[2]=$comment;
 			$data3[3]=$date;
 			$DATA=$data3[0]."<>".$data3[1]."<>".$data3[2]."<>".$data3[3]."<>".$data3[4]."<>";
-			}else{//ƒCƒR[ƒ‹‚¶‚á‚È‚¢‚Æ‚«
+			}else{//ã‚¤ã‚³ãƒ¼ãƒ«ã˜ã‚ƒãªã„ã¨ã
 			$DATA=$data2[0]."<>".$data2[1]."<>".$data2[2]."<>".$data2[3]."<>".$data2[4]."<>";
 			}
 			fwrite($fp_w,$DATA."\n");
 			}
 			fclose($fp_w);
 			}
-//íœ
+//å‰Šé™¤
 	
-//íœ”Ô†‚É‘‚«‚İ‚ ‚è
+//å‰Šé™¤ç•ªå·ã«æ›¸ãè¾¼ã¿ã‚ã‚Š
 	if(!empty($del_number)){
 	$ret_array=file($filename);
 	$fp_w=fopen($filename,"w");
@@ -99,55 +98,34 @@ $DATA=$count."<>".$name."<>".$comment."<>".$date."<>".$pswd;		//“Še”Ô†A–¼‘OA
 	fclose($fp_w);
 	foreach($ret_array as $data){
 	$data1=explode("<>",$data);
-//ƒpƒXƒ[ƒh‚ªˆê’v‚·‚é
+//ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒä¸€è‡´ã™ã‚‹
 		if($data1[4]==$del_pswd){
-//”Ô†‚ªˆê’v‚µ‚È‚¢
+//ç•ªå·ãŒä¸€è‡´ã—ãªã„
 			if($data1[0]!=$del_number){
 				$fp_a=fopen($filename,"a");
 				fwrite($fp_a,$data);
 				fclose($fp_a);
-				//echo $data1[0]." ".$data1[1]." ".$data1[2]." ".$data1[3]."<br>";
 			}
-//ƒpƒXƒ[ƒh‚ªˆê’v‚µ‚È‚¢
+//ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒä¸€è‡´ã—ãªã„
 			}elseif($data1[4]!=$del_pswd){
 				$fp_a=fopen($filename,"a");
 				fwrite($fp_a,$data);
 				fclose($fp_a);
-				//echo $data1[0]." ".$data1[1]." ".$data1[2]." ".$data1[3]."<br>";
 			
-//íœ”Ô†‚É‘‚«‚İ‚ª‚È‚¢
+//å‰Šé™¤ç•ªå·ã«æ›¸ãè¾¼ã¿ãŒãªã„
 		}
 		}
 		}elseif(empty($del_number)){
 		$ret_array=file($filename);
 		$fp_r=fopen($filename,"r");
-		fwrite($fp_r,$data);
-			//foreach($ret_array as $data){
-				//$data1=explode("<>",$data);
-				//echo $data1[0]." ".$data1[1]." ".$data1[2]." ".$data1[3]."<br>";
+		fwrite($fp_r,$data);	
 		fclose($fp_r);
-		//echo $data1[0]." ".$data1[1]." ".$data1[2]." ".$data1[3]."<br>";
 		}
 		$ret_array=file($filename);
 		foreach($ret_array as $data){
 		$data1=explode("<>",$data);
 		echo $data1[0]." ".$data1[1]." ".$data1[2]." ".$data1[3]."<br>";
 		}
-
-
-/*//íœ‚ÆƒpƒXƒ[ƒh‚É‘‚«‚İ‚ª‚È‚¢
-	}elseif(empty($del_number) && empty($del_number)){
-	$ret_array=file($filename);
-	$fp_a=fopen($filename,"a");
-	foreach($ret_array as $data){
-	$data1=explode("<>",$data);
-	echo $data1[0]." ".$data1[1]." ".$data1[2]." ".$data1[3]."<br>";
-	}
-	fclose($fp_a);
-	}
-*/
-	
-
 
 
 ?>
